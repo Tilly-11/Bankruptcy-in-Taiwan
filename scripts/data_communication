@@ -1,0 +1,31 @@
+#Feature importance
+importances = model.best_estimator_.feature_importances_
+features = X_train.columns
+feat_imp = pd.Series(importances, index=features).sort_values()
+feat_imp.head()
+
+#Plot feature importance
+feat_imp.tail(10).plot(
+    kind="barh",
+    xlabel = "Gini Importance",
+    ylabel = "Feature",
+    title = "Feature Importance"
+);
+
+
+# Save model
+with open("model-5-5.pkl", "wb") as f:
+    pickle.dump(model,f)
+
+
+# Import module
+from my_predictor_assignment import make_predictions
+
+# Generate predictions(replace file path)
+y_test_pred = make_predictions(
+    data_filepath="data/taiwan-bankruptcy-data-test-features.json.gz",
+    model_filepath="model-5-5.pkl",
+)
+
+print("predictions shape:", y_test_pred.shape)
+y_test_pred.head()
