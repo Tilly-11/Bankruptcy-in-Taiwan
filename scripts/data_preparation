@@ -1,0 +1,38 @@
+# Load data file
+with gzip.open("data/taiwan-bankruptcy-data.json.gz", "r") as f:
+    taiwan_data = json.load(f)
+
+print(type(taiwan_data))
+
+
+#Extract key names
+taiwan_data_keys = taiwan_data.keys()
+print(taiwan_data_keys)
+
+
+#Total number of companies
+n_companies = len(taiwan_data["observations"])
+print(n_companies)
+
+
+#Total number of features
+n_features = len(taiwan_data["observations"][0])
+print(n_features)
+
+
+# Create wrangle function
+def wrangle(filepath):
+    #openng json file
+    with gzip.open(filepath, "r") as f:
+        data = json.load(f)
+        
+    #reading data into a dataframe
+    df = pd.DataFrame().from_dict(data["observations"]).set_index("id")
+    
+    return df
+
+
+#read file
+df = wrangle("data/taiwan-bankruptcy-data.json.gz")
+print("df shape:", df.shape)
+df.head()
