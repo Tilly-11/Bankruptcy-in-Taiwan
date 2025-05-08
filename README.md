@@ -25,3 +25,6 @@ By completing this project, I was able to:
 
 Project Highlights
 This project strengthens key skills required for real-world machine learning tasks, especially in domains where data imbalance is a critical challenge. Predicting bankruptcy accurately is crucial for financial forecasting and risk management, and this project provides a practical approach to solving such classification problems.
+
+## NOTE
+Download zip file to access data
