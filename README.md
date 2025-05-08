@@ -1,6 +1,6 @@
 # Bankruptcy-in-Taiwan
 **Overview**
-In this project, I explore data collected by a team of Polish economists to predict whether a company will go bankrupt. This exercise combines fundamental data science and machine learning techniques, focusing on handling imbalanced data and building strong classification models.
+In this project, I explore data collected by a team of Taiwanese economists to predict whether a company will go bankrupt. This exercise combines fundamental data science and machine learning techniques, focusing on handling imbalanced data and building strong classification models.
 ___
 
 **Objectives**
